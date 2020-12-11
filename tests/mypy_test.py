@@ -10,7 +10,7 @@ v_bytes: ReturnType[Callable[..., bytes]] = b"2123"
 v_hash: ReturnType[Callable[..., Hashable]] = 1
 
 
-class AwaitableClass(abc.Awaitable[Any]):
+class AwaitableClass(Awaitable[Any]):
     def __await__(self):
         pass
 

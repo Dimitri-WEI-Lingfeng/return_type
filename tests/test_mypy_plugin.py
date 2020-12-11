@@ -9,5 +9,4 @@ def test_mypy_plugin():
             "--show-traceback",
         ]
     )
-    print(result)
     assert result[2] == 0

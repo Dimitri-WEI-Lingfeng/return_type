@@ -1,5 +1,5 @@
 from mypy.plugin import Plugin, AnalyzeTypeContext
-from mypy.types import TypeAliasType
+from mypy.types import TypeAliasType, AnyType, TypeOfAny
 
 
 class ReturnTypePlugin(Plugin):
@@ -16,8 +16,7 @@ class ReturnTypePlugin(Plugin):
                     if isinstance(arg_tp, TypeAliasType):
                         arg_tp = arg_tp.alias.target
                     return arg_tp.ret_type
-                else:
-                    raise TypeError("ReturnType should be parameterized")
+                return AnyType(TypeOfAny.from_omitted_generics)
 
             return hook
 

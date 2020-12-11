@@ -10,7 +10,7 @@ pip install return_type
 add plugin to `mypy.ini`
 ```ini
 [mypy]
-plugins = return_type/mypy-plugin.py
+plugins = return_type.mypy-plugin.py
 ```
 
 # Usage
